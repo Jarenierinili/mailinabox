@@ -309,7 +309,7 @@ include("$STORAGE_ROOT/owncloud/config.php");
 \$CONFIG['trusted_domains'] = array('$PRIMARY_HOSTNAME');
 
 \$CONFIG['memcache.local'] = '\OC\Memcache\APCu';
-\$CONFIG['overwrite.cli.url'] = 'https://${PRIMARY_HOSTNAME}:8443/cloud';
+\$CONFIG['overwrite.cli.url'] = 'https://${PRIMARY_HOSTNAME}:8543/cloud';
 \$CONFIG['mail_from_address'] = 'administrator'; # just the local part, matches our master administrator address
 
 \$CONFIG['logtimezone'] = '$TIMEZONE';
