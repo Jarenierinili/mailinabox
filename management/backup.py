@@ -512,7 +512,7 @@ def list_target_files(config):
 		# connect to the region & bucket
 		try:
 			s3 = boto3.client('s3', \
-				endpoint_url=f'https://{target.hostname}:8443', \
+				endpoint_url=f'https://{target.hostname}:8543', \
 				aws_access_key_id=config['target_user'], \
 				aws_secret_access_key=config['target_pass'])
 			bucket_objects = s3.list_objects_v2(Bucket=bucket, Prefix=path)['Contents']
