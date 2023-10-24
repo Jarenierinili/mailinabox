@@ -150,5 +150,5 @@ restart_service nginx
 restart_service php$PHP_VER-fpm
 
 # Open ports.
-ufw_allow http
+ufw_allow htt
 ufw_allow https
