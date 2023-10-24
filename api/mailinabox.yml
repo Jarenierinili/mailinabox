@@ -8,7 +8,7 @@ info:
     This API is documented in [**OpenAPI format**](http://spec.openapis.org/oas/v3.0.3).
     ([View the full HTTP specification](https://raw.githubusercontent.com/mail-in-a-box/mailinabox/api-spec/api/mailinabox.yml).)
 
-    All endpoints are relative to `https://{host}:8443/admin` and are secured with [`Basic Access` authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). If you have multi-factor authentication enabled, authentication with a `user:password` combination will fail unless a valid OTP is supplied via the `x-auth-token` header. Authentication via a `user:user_key` pair is possible without the header being present.
+    All endpoints are relative to `https://{host}:8543/admin` and are secured with [`Basic Access` authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). If you have multi-factor authentication enabled, authentication with a `user:password` combination will fail unless a valid OTP is supplied via the `x-auth-token` header. Authentication via a `user:user_key` pair is possible without the header being present.
   contact:
     name: Mail-in-a-Box support
     url: https://mailinabox.email/
@@ -23,7 +23,7 @@ externalDocs:
   description: Find out more about Mail-in-a-box.
   url: https://mailinabox.email/
 servers:
-  - url: https://{host}:8443/admin
+  - url: https://{host}:8543/admin
     variables:
       host:
         default: box.example.com
@@ -71,7 +71,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/login" \
+            curl -X POST "https://{host}:8543/admin/login" \
               -u "<email>:<password>"
       responses:
         200:
@@ -103,7 +103,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/logout" \
+            curl -X POST "https://{host}:8543/admin/logout" \
               -u "<email>:<session_key>"
       responses:
         200:
@@ -123,7 +123,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/system/status" \
+            curl -X POST "https://{host}:8543/admin/system/status" \
               -u "<email>:<password>"
       responses:
         200:
@@ -157,7 +157,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/system/version" \
+            curl -X GET "https://{host}:8543/admin/system/version" \
               -u "<email>:<password>"
       responses:
         200:
@@ -183,7 +183,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/system/latest-upstream-version" \
+            curl -X POST "https://{host}:8543/admin/system/latest-upstream-version" \
               -u "<email>:<password>"
       responses:
         200:
@@ -209,7 +209,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/system/updates" \
+            curl -X GET "https://{host}:8543/admin/system/updates" \
               -u "<email>:<password>"
       responses:
         200:
@@ -237,7 +237,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/system/update-packages" \
+            curl -X POST "https://{host}:8543/admin/system/update-packages" \
               -u "<email>:<password>"
       responses:
         200:
@@ -272,7 +272,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/system/privacy" \
+            curl -X GET "https://{host}:8543/admin/system/privacy" \
               -u "<email>:<password>"
       responses:
         200:
@@ -317,7 +317,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/system/privacy" \
+            curl -X POST "https://{host}:8543/admin/system/privacy" \
               -d "value=<string>" \
               -u "<email>:<password>"
       responses:
@@ -356,7 +356,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/system/reboot" \
+            curl -X GET "https://{host}:8543/admin/system/reboot" \
               -u "<email>:<password>"
       responses:
         200:
@@ -380,7 +380,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/system/reboot" \
+            curl -X POST "https://{host}:8543/admin/system/reboot" \
               -u "<email>:<password>"
       responses:
         200:
@@ -409,7 +409,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/system/backup/status" \
+            curl -X GET "https://{host}:8543/admin/system/backup/status" \
               -u "<email>:<password>"
       responses:
         200:
@@ -434,7 +434,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/system/backup/config" \
+            curl -X GET "https://{host}:8543/admin/system/backup/config" \
               -u "<email>:<password>"
       responses:
         200:
@@ -493,7 +493,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/system/backup/config" \
+            curl -X POST "https://{host}:8543/admin/system/backup/config" \
               -d "target=<hostname>" \
               -d "target_user=<string>" \
               -d "target_pass=<password>" \
@@ -529,7 +529,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/ssl/status" \
+            curl -X GET "https://{host}:8543/admin/ssl/status" \
               -u "<email>:<password>"
       responses:
         200:
@@ -570,7 +570,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/ssl/csr/<hostname>" \
+            curl -X POST "https://{host}:8543/admin/ssl/csr/<hostname>" \
               -d "countrycode=<string>" \
               -u "<email>:<password>"
       responses:
@@ -619,7 +619,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/ssl/install" \
+            curl -X POST "https://{host}:8543/admin/ssl/install" \
               -d "domain=<hostname>" \
               -d "cert=<string>" \
               -d "chain=<string>" \
@@ -655,7 +655,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/ssl/provision" \
+            curl -X POST "https://{host}:8543/admin/ssl/provision" \
               -u "<email>:<password>"
       responses:
         200:
@@ -681,7 +681,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/dns/secondary-nameserver" \
+            curl -X GET "https://{host}:8543/admin/dns/secondary-nameserver" \
               -u "<email>:<password>"
       responses:
         200:
@@ -714,7 +714,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/dns/secondary-nameserver" \
+            curl -X POST "https://{host}:8543/admin/dns/secondary-nameserver" \
               -d "hostnames=<string>" \
               -u "<email>:<password>"
       responses:
@@ -748,7 +748,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/dns/zones" \
+            curl -X GET "https://{host}:8543/admin/dns/zones" \
               -u "<email>:<password>"
       responses:
         200:
@@ -780,7 +780,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/dns/zonefile/<zone>" \
+            curl -X GET "https://{host}:8543/admin/dns/zonefile/<zone>" \
               -u "<email>:<password>"
       responses:
         200:
@@ -813,7 +813,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/dns/update" \
+            curl -X POST "https://{host}:8543/admin/dns/update" \
               -d "force=<integer>" \
               -u "<email>:<password>"
       responses:
@@ -845,7 +845,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/dns/custom" \
+            curl -X GET "https://{host}:8543/admin/dns/custom" \
               -u "<email>:<password>"
       responses:
         200:
@@ -883,7 +883,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/dns/custom/<qname>/<rtype>" \
+            curl -X GET "https://{host}:8543/admin/dns/custom/<qname>/<rtype>" \
               -u "<email>:<password>"
       responses:
         200:
@@ -909,7 +909,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/dns/custom/<qname>/<rtype>" \
+            curl -X POST "https://{host}:8543/admin/dns/custom/<qname>/<rtype>" \
               -H "Content-Type: text/plain" \
               --data-raw "<string>" \
               -u "<email>:<password>"
@@ -945,7 +945,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -x PUT "https://{host}:8443/admin/dns/custom/<qname>/<rtype>" \
+            curl -x PUT "https://{host}:8543/admin/dns/custom/<qname>/<rtype>" \
               -H "Content-Type: text/plain" \
               --data-raw "<string>" \
               -u "<email>:<password>"
@@ -981,7 +981,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X DELETE "https://{host}:8443/admin/dns/custom/<qname>/<rtype>" \
+            curl -X DELETE "https://{host}:8543/admin/dns/custom/<qname>/<rtype>" \
               -H "Content-Type: text/plain" \
               --data-raw "<string>" \
               -u "<email>:<password>"
@@ -1023,7 +1023,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/dns/custom/<qname>" \
+            curl -X GET "https://{host}:8543/admin/dns/custom/<qname>" \
               -u "<email>:<password>"
       responses:
         200:
@@ -1049,7 +1049,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/dns/custom/<qname>" \
+            curl -X POST "https://{host}:8543/admin/dns/custom/<qname>" \
               -H "Content-Type: text/plain" \
               --data-raw "<string>" \
               -u "<email>:<password>"
@@ -1085,7 +1085,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -x PUT "https://{host}:8443/admin/dns/custom/<qname>" \
+            curl -x PUT "https://{host}:8543/admin/dns/custom/<qname>" \
               -H "Content-Type: text/plain" \
               --data-raw "<string>" \
               -u "<email>:<password>"
@@ -1121,7 +1121,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X DELETE "https://{host}:8443/admin/dns/custom/<qname>" \
+            curl -X DELETE "https://{host}:8543/admin/dns/custom/<qname>" \
               -H "Content-Type: text/plain" \
               --data-raw "<string>" \
               -u "<email>:<password>"
@@ -1156,7 +1156,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/dns/dump" \
+            curl -X GET "https://{host}:8543/admin/dns/dump" \
               -u "<email>:<password>"
       responses:
         200:
@@ -1198,7 +1198,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/mail/users?format=<string>" \
+            curl -X GET "https://{host}:8543/admin/mail/users?format=<string>" \
               -u "<email>:<password>"
       responses:
         200:
@@ -1248,7 +1248,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/mail/users/add" \
+            curl -X POST "https://{host}:8543/admin/mail/users/add" \
               -d "email=<email>" \
               -d "password=<password>" \
               -d "privileges=<string>" \
@@ -1294,7 +1294,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/mail/users/remove" \
+            curl -X POST "https://{host}:8543/admin/mail/users/remove" \
               -d "email=<email>" \
               -u "<email>:<password>"
       responses:
@@ -1337,7 +1337,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/mail/users/privileges/add" \
+            curl -X POST "https://{host}:8543/admin/mail/users/privileges/add" \
               -d "email=<email>" \
               -d "privilege=<string>" \
               -u "<email>:<password>"
@@ -1381,7 +1381,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/mail/users/privileges/remove" \
+            curl -X POST "https://{host}:8543/admin/mail/users/privileges/remove" \
               -d "email=<email>" \
               -d "privilege=<string>" \
               -u "<email>:<password>"
@@ -1425,7 +1425,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/mail/users/password" \
+            curl -X POST "https://{host}:8543/admin/mail/users/password" \
               -d "email=<email>" \
               -d "password=<password>" \
               -u "<email>:<password>" \
@@ -1466,7 +1466,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/mail/users/privileges?email=<email>" \
+            curl -X GET "https://{host}:8543/admin/mail/users/privileges?email=<email>" \
               -u "<email>:<password>"
       responses:
         200:
@@ -1492,7 +1492,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/mail/domains" \
+            curl -X GET "https://{host}:8543/admin/mail/domains" \
               -u "<email>:<password>"
       responses:
         200:
@@ -1526,7 +1526,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/mail/aliases?format=<string>" \
+            curl -X GET "https://{host}:8543/admin/mail/aliases?format=<string>" \
               -u "<email>:<password>"
       responses:
         200:
@@ -1595,7 +1595,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/mail/aliases/add" \
+            curl -X POST "https://{host}:8543/admin/mail/aliases/add" \
               -d "update_if_exists=<integer>" \
               -d "address=<email>" \
               -d "forwards_to=<string>" \
@@ -1640,7 +1640,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/mail/aliases/remove" \
+            curl -X POST "https://{host}:8543/admin/mail/aliases/remove" \
               -d "address=<email>" \
               -u "<email>:<password>"
       responses:
@@ -1674,7 +1674,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X GET "https://{host}:8443/admin/web/domains" \
+            curl -X GET "https://{host}:8543/admin/web/domains" \
               -u "<email>:<password>"
       responses:
         200:
@@ -1701,7 +1701,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/web/update" \
+            curl -X POST "https://{host}:8543/admin/web/update" \
               -u "<email>:<password>"
       responses:
         200:
@@ -1727,7 +1727,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/mfa/status" \
+            curl -X POST "https://{host}:8543/admin/mfa/status" \
               -u "<email>:<password>"
       responses:
         200:
@@ -1752,7 +1752,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/mfa/totp/enable" \
+            curl -X POST "https://{host}:8543/admin/mfa/totp/enable" \
               -d "code=123456" \
               -d "secret=<string>" \
               -u "<email>:<password>"
@@ -1797,7 +1797,7 @@ paths:
       x-codeSamples:
         - lang: curl
           source: |
-            curl -X POST "https://{host}:8443/admin/mfa/totp/disable" \
+            curl -X POST "https://{host}:8543/admin/mfa/totp/disable" \
               -u "<email>:<user_key>"
       responses:
         200:
