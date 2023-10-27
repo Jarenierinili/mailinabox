@@ -39,8 +39,8 @@ def get_services():
 		#{ "name": "Postfix/master", "port": 10587, "public": True, },
 		{ "name": "IMAPS (dovecot)", "port": 993, "public": True, },
 		{ "name": "Mail Filters (Sieve/dovecot)", "port": 4190, "public": True, },
-		{ "name": "HTTP Web (nginx)", "port": 8180, "public": True, },
-		{ "name": "HTTPS Web (nginx)", "port": 8543, "public": True, },
+		{ "name": "HTTP Web (nginx)", "port": 8280, "public": True, },
+		{ "name": "HTTPS Web (nginx)", "port": 8643, "public": True, },
 	]
 
 def run_checks(rounded_values, env, output, pool, domains_to_check=None):
