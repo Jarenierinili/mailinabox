@@ -232,13 +232,13 @@ if __name__ == "__main__":
 	run_test(managesieve_test, [], 20, 30, 4)
 
 	# Mail-in-a-Box control panel
-	run_test(http_test, [":8543/admin/login", 200], 20, 30, 1)
+	run_test(http_test, [":8643/admin/login", 200], 20, 30, 1)
 
 	# Munin via the Mail-in-a-Box control panel
-	run_test(http_test, [":8543/admin/munin/", 401], 20, 30, 1)
+	run_test(http_test, [":8643/admin/munin/", 401], 20, 30, 1)
 
 	# ownCloud
-	run_test(http_test, [":8543/cloud/remote.php/webdav", 401, None, None, [owncloud_user, "aa"]], 20, 120, 1)
+	run_test(http_test, [":8643/cloud/remote.php/webdav", 401, None, None, [owncloud_user, "aa"]], 20, 120, 1)
 
 	# restart fail2ban so that this client machine is no longer blocked
 	restart_fail2ban_service(final=True)
