@@ -17,7 +17,7 @@
       <key>CalDAVHostName</key>
       <string>PRIMARY_HOSTNAME</string>
       <key>CalDAVPort</key>
-      <real>8543</real>
+      <real>8643</real>
       <key>CalDAVUseSSL</key>
       <true/>
       <key>PayloadDescription</key>
